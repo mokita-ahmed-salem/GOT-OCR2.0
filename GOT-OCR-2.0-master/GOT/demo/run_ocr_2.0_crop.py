@@ -203,7 +203,7 @@ def eval_model(args):
             max_new_tokens=4096,
             stopping_criteria=[stopping_criteria]
             )
-        
+    print(f"\n\nOUTPUTS SHAPE:\n{output_ids.shape}\n\n")  
     if args.render:
         print('==============rendering===============')
         outputs = tokenizer.decode(output_ids[0, input_ids.shape[1]:]).strip()
